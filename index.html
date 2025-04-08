@@ -6,7 +6,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const path = window.location.pathname.replace(/^\\/|\\/$/g, "");
-      fetch("/redirects.json")
+      fetch("redirects.json")
         .then(res => res.json())
         .then(redirects => {
           if (redirects[path]) {
