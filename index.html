@@ -16,6 +16,47 @@
           }
         });
     });
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 64px;
+      color: #000;
+      text-align: center;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const path = window.location.pathname.replace(/^\\/|\\/$/g, "");
+      fetch("/larps.lol/redirects.json")
+        .then(res => res.json())
+        .then(redirects => {
+          if (redirects[path]) {
+            window.location.href = redirects[path];
+          } else {
+            document.body.innerHTML = "<h1>Link not found</h1>";
+          }
+        });
+    });
+  </script>
+</head>
+<body>
+  <h1>SCWRSS OWNS ME</h1>
+</body>
+</html>
   </script>
 </head>
 <body>
